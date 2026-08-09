@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Blessing 💕 | With Love From Samuel</title>
+    
+    <!-- Meta tags for SEO & preview -->
+    <meta name="description" content="A special romantic website dedicated to Blessing, filled with love notes, memories, and surprises from Samuel.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons & Canvas Confetti CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Background Canvas for Floating Hearts & Sparkles -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- Music Synth Control Button -->
+    <div class="music-player-widget" id="musicWidget">
+        <button id="musicToggleBtn" aria-label="Toggle Romantic Music">
+            <i class="fas fa-heart-music" id="musicIcon">🎵</i>
+            <span class="music-pulse"></span>
+        </button>
+        <div class="music-info">
+            <span class="song-title">Romantic Melodies</span>
+            <span class="song-status" id="musicStatus">Click to play audio 💖</span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="heart-brand">Blessing & Samuel</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#letter"><i class="fas fa-envelope-open-text"></i> Letter</a></li>
+            <li><a href="#reasons"><i class="fas fa-heart"></i> Reasons</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Memories</a></li>
+            <li><a href="#coupons"><i class="fas fa-ticket-alt"></i> Coupons</a></li>
+            <li><a href="#question"><i class="fas fa-gift"></i> Surprise</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-wrapper">
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-badge animate-bounce">
+                <span class="sparkle">✨</span> Made Specially For You <span class="sparkle">✨</span>
+            </div>
+            
+            <h1 class="hero-title">
+                To My Dearest <span class="glow-text" id="herNameHeading">Blessing</span> 💕
+            </h1>
+            
+            <p class="hero-subtitle" id="heroSubtitle">
+                You are my daily smile, my peaceful home, and my favorite blessing in this world.
+            </p>
+
+            <!-- Relationship Time Counter -->
+            <div class="timer-card glass-panel">
+                <h3 class="timer-title"><i class="fas fa-clock"></i> We've Been Sharing Love For:</h3>
+                <div class="timer-grid">
+                    <div class="time-box">
+                        <span class="time-num" id="timerDays">00</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-num" id="timerHours">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-num" id="timerMinutes">00</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-num" id="timerSeconds">00</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action CTA -->
+            <div class="hero-actions">
+                <a href="#letter" class="btn btn-primary pulse-btn">
+                    <i class="fas fa-heart"></i> Open My Love Envelope
+                </a>
+                <button class="btn btn-secondary" id="randomLoveBtn">
+                    <i class="fas fa-magic"></i> Send A Quick Kiss
+                </button>
+            </div>
+            
+            <div class="scroll-down-indicator">
+                <span>Scroll down for more magic</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+
+        <!-- LOVE LETTER ENVELOPE SECTION -->
+        <section class="section-container" id="letter">
+            <div class="section-header">
+                <span class="sub-heading">A Personal Note</span>
+                <h2 class="section-title">My Heart In Words 💌</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelopeCard">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-pocket"></div>
+                    <div class="envelope-seal" id="envelopeSeal">
+                        <span>💖</span>
+                        <small>Click to Open</small>
+                    </div>
+                    
+                    <!-- Inside Letter -->
+                    <div class="letter-content" id="letterPaper">
+                        <div class="letter-header">
+                            <span class="letter-date" id="currentDateStr">August 2026</span>
+                            <h3 id="letterSalutation">Dearest Blessing,</h3>
+                        </div>
+                        <div class="letter-body">
+                            <p id="letterP1"></p>
+                            <p id="letterP2"></p>
+                            <p id="letterP3"></p>
+                        </div>
+                        <div class="letter-footer">
+                            <p id="letterValediction">Forever Yours,</p>
+                            <h4 id="letterSignature">Samuel 💖</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- REASONS WHY I LOVE YOU SECTION -->
+        <section class="section-container" id="reasons">
+            <div class="section-header">
+                <span class="sub-heading">Countless Reasons</span>
+                <h2 class="section-title">Why You Mean The World To Me 🌹</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <p class="section-desc">Hover or tap any card below to flip it and reveal why Samuel adores you!</p>
+
+            <div class="reasons-grid" id="reasonsGrid">
+                <!-- Dynamic cards injected via script -->
+            </div>
+        </section>
+
+
+        <!-- OUR MEMORIES PHOTO GALLERY -->
+        <section class="section-container" id="gallery">
+            <div class="section-header">
+                <span class="sub-heading">Precious Moments</span>
+                <h2 class="section-title">Our Sweetest Memories 📷</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="polaroid-gallery" id="galleryGrid">
+                <!-- Dynamic polaroid cards injected via script -->
+            </div>
+        </section>
+
+
+        <!-- LOVE COUPONS SECTION -->
+        <section class="section-container" id="coupons">
+            <div class="section-header">
+                <span class="sub-heading">For Blessing Only</span>
+                <h2 class="section-title">Your Special Love Coupons 🎟️</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <p class="section-desc">Click "Redeem Coupon" whenever you want Samuel to fulfill these promises!</p>
+
+            <div class="coupons-grid" id="couponsGrid">
+                <!-- Dynamic coupons injected via script -->
+            </div>
+        </section>
+
+
+        <!-- LOVE METER & PLAYFUL QUESTION SECTION -->
+        <section class="section-container" id="question">
+            <div class="section-header">
+                <span class="sub-heading">Interactive Love Quiz</span>
+                <h2 class="section-title">How Much Do You Adore Samuel? 💘</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Love Slider Meter -->
+            <div class="love-meter-card glass-panel">
+                <h3>Slide to measure your love level:</h3>
+                <div class="meter-wrapper">
+                    <input type="range" min="1" max="100" value="100" class="love-slider" id="loveSlider">
+                    <div class="meter-value"><span id="lovePercentage">100</span>% Love!</div>
+                </div>
+                <p class="meter-reaction" id="meterReaction">Warning: Excess love detected! 💕🔥</p>
+            </div>
+
+            <!-- Playful Proposal / Date Section -->
+            <div class="proposal-card glass-panel" id="proposalCard">
+                <div class="heart-crown">👑💖</div>
+                <h2 class="proposal-question" id="quizQuestion">
+                    Blessing, will you stay as Samuel's #1 Princess forever?
+                </h2>
+
+                <div class="proposal-buttons">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <i class="fas fa-heart"></i> YES! ABSOLUTELY! 😍
+                    </button>
+                    <button class="btn btn-no" id="noBtn">
+                        No way 😜
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Made with infinite love by <strong id="footerBoyfriend">Samuel</strong> for <strong id="footerGirlfriend">Blessing</strong> 💕</p>
+        <p class="copyright">Always & Forever • 2026</p>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR PHOTOS -->
+    <div class="modal-overlay" id="photoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="Memory Preview" id="modalImage" class="modal-img">
+            <h3 id="modalTitle"></h3>
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <!-- CELEBRATION YES MODAL -->
+    <div class="modal-overlay" id="yesModal">
+        <div class="modal-content celebration-box">
+            <div class="big-emoji">🎉🥰💖</div>
+            <h2 id="yesModalTitle">YAYYY! BEST NEWS EVER!</h2>
+            <p id="yesModalText">Samuel loves you so incredibly much! Get ready for extra hugs, laughs, and treats!</p>
+            <button class="btn btn-primary" id="yesModalClose">You're The Best! 💕</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
